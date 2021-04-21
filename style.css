@@ -81,9 +81,9 @@ header a {
     flex-direction: column;
 }
 
-.projects-item {
-    padding-left: 30px;
+.projects-link {
     width: 100%;
+    cursor: pointer;
 }
 
 .projects-link {
@@ -113,6 +113,25 @@ main {
 }
 
 .image-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    display: none;
+}
+
+#main-page {
+    display: inline-block;
+}
+
+.media-container {
+    height: 500px;
+    width: 850px;
+}
+
+.media-container video, img{
     object-fit: cover;
     height: 100%;
     width: 100%;
