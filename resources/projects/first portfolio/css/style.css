@@ -1,0 +1,223 @@
+:root {
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+    --skill-one-percentage: 20em;
+    --skill-two-percentage: 10em;
+    --skill-three-percentage: 30em;
+    --skill-four-percentage: 40em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+.title-container {
+    border: 1px hidden white;
+    position: absolute;
+    width: 55em;
+    top: 15em;
+    left: 10em;
+}
+
+.about-me {
+    float: left;
+    position: absolute;
+    border: 1px hidden white;
+    height: 20em;
+    width: 50em;
+    top: 40em;
+    left: 63em;
+    opacity: 0;
+}
+
+.about-me p {
+    float: left;
+}
+
+.skill-list {
+    list-style: none;
+    /*border: 1px solid yellow;*/
+}
+
+.backdrop-bar {
+    position: absolute;
+    height: 1em;
+    width: 50em;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+.contact-form {
+    position: absolute;
+    top: 5em;
+    left: 5em;
+    /*border: 1px solid #ffffff;*/
+    background-color: #0c0c0c;
+    height: 32em;
+    width: 60em;
+    z-index: 2;
+}
+
+.form-box {
+    height: 1.2em;
+    width: 60em;
+}
+
+.contact-form p {
+    float: left;
+}
+
+.contact-form textarea {
+    resize: none;
+    border: 0;
+    padding-top: 1em;
+    color: #ffffff;
+    font-size: 1em;
+    background: transparent;
+    height: 25em;
+    width: 60em;
+}
+
+.form {
+    border: 0;
+    color: #00ff00;
+    font-size: 1rem;
+    background: transparent;
+    outline-style: none;
+    width: 50em;
+}
+
+.image-box {
+    position: relative;
+    top: 1.2em;
+    left: 5.2em;
+    height: 30em;
+    width: 57em;
+    float: left;
+}
+
+.image-box p {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    text-align: center;
+    /*height: 30em;
+    width: 57em;
+    display: inline-block;*/
+}
+
+/*.image-box p:hover {
+    display: none;
+}*/
+
+.project-images {
+    height: 100%;
+    width: 100%;
+    filter: blur(8px);
+    
+    -moz-transition: filter 200ms ease-out;
+    -o-transition: filter 200ms ease-out;
+    -webkit-transition: filter 200ms ease-out;
+    transition: filter 200ms ease-out;
+}
+
+.project-images:hover {
+    filter: blur(0px);
+}
+
+#skills-box {
+    position: absolute;
+    top: 15em;
+    left: 10em;
+}
+
+#skill-list-one {
+    width: var(--skill-one-percentage);
+}
+#skill-list-two {
+    width: var(--skill-two-percentage);
+}
+#skill-list-three {
+    width: var(--skill-three-percentage);
+}
+#skill-list-four {
+    width: var(--skill-four-percentage);
+}
+
+@keyframes slideSkillOneFromLeft {
+    0% {width: 0em;}
+    100% {width: var(--skill-one-percentage);}
+}
+@keyframes slideSkillTwoFromLeft {
+    0% {width: 0em;}
+    100% {width: var(--skill-two-percentage);}
+}
+@keyframes slideSkillThreeFromLeft {
+    0% {width: 0em;}
+    100% {width: var(--skill-three-percentage);}
+}
+@keyframes slideSkillFourFromLeft {
+    0% {width: 0em;}
+    100% {width: var(--skill-four-percentage);}
+}
+
+#skill-one {
+    height: 1em;
+    animation: slideSkillOneFromLeft 1s;
+    background-color: #ffffff;
+}
+#skill-two {
+    height: 1em;
+    animation: slideSkillTwoFromLeft 1s;
+    background-color: #ffffff;
+}
+#skill-three {
+    height: 1em;
+    animation: slideSkillThreeFromLeft 1s;
+    background-color: #ffffff;
+}
+#skill-four {
+    height: 1em;
+    animation: slideSkillFourFromLeft 1s;
+    background-color: #ffffff;
+}
+
+#drag-box {
+    background-color: #ffffff;
+    color: #000000;
+    height: 2em;
+}
+
+#drag-box p {
+    padding-top: 0.5em;
+}
+
+#keyboard {
+    position: fixed;
+    top: 40em;
+    left: 11em;
+    height: 16em;
+    width: 48em;
+    opacity: 0.5;
+}
+
+#keyboard li {
+    float: left;
+    display: inline;
+    list-style: none;
+}

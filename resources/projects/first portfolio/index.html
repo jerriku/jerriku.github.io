@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/nav-style.css">
+        <title>J_</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+        <script src="./js/jquery-3.5.1.js"></script>
+    </head>
+    <body>
+        <nav class="nav-bar">
+            <ul class="nav-lists">
+                <li><a class="nav-choice home-page" href="index.html">H0M3</a></li>
+                <li><a class="nav-choice skill-page" href="skills.html">SK1LLS</a></li>
+                <li><a class="nav-choice project-page" href="projects.html">PR0J3CTS</a></li>
+                <li><a class="nav-choice contact-page" href="contact.html">C0NT@CT</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-box">
+            <div class="title-container"><h1 class="title"></h1></div>
+        </section>
+
+        <section id="keyboard">
+            <ul id="numRow"></ul>
+            <ul id="tabRow"></ul>
+            <ul id="capsRow"></ul>
+            <ul id="shiftRow"></ul>
+            <ul id="ctrlRow"></ul>
+        </section>
+        
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>
+                Hello, I am Jeric, I recently finished university, but I would like to further study a different subject that I enjoy.
+                I chose to continue my path for an apprenticeship because I believe that I, myself, am more suited to learn
+                in a working environment as this helps me learn and understand better. I am very hardworking, I am a quick
+                learner, I enjoy coding and learning new and fun things.
+            </p>
+        </section>
+
+        <script src="./js/keyboard-not-to-type-script.js"></script>
+
+        <script>
+            const msg = [" ","H","i",",","<br>","I","'","m"," ","J","e","r","i","c",",","<br>","s","o","f","t","w","a","r","e"," ","e","n","g","i","n","e","e","r","."];
+            const msgSpeed = 150;
+            let idle = false;
+            let title = "_";
+            let nameIndex = 0;
+            let yMove = 0;
+            let xMove = 0;
+            let counter = 0; 
+
+            function showAboutMe(element) {
+                element.style.transition = "all 500ms ease-in";
+                element.style.top = "35em";
+                element.style.opacity = "1";
+            }
+
+            function moveUnderScore(element) {
+                //idle ? console.log("It is in idle mode."): console.log("It is not in idle mode.");
+                switch (idle){
+                    case false:
+                        element.style.top = yMove + "em";
+                        element.style.left = xMove + "em";
+                        break;
+                    case true:
+                        setTimeout(function() {
+                            if (counter !== 1) {
+                                element.innerHTML = "_"
+                                counter++;
+                            } else if (counter !== 0) {
+                                element.innerHTML = "";
+                                counter--;
+                            }
+                            moveUnderScore($(".under-score")[0]);
+                        }, 500);
+                }
+            }
+
+            function addUnderScore() {
+                $(".title-container").append("<h1 class='under-score'>_</h1>");
+                $(".under-score").css({
+                    position: "absolute",
+                    top: yMove + "em",
+                    left: xMove +  "em"
+                });
+            }
+
+            function typeWriter(){
+                if (nameIndex < msg.length) {
+                    if (msg[nameIndex] === "<br>") {
+                        yMove += 1.1;
+                        xMove = 0;
+                    }
+                    if (msg[nameIndex] !== "<br>" || msg[nameIndex] !== undefined){
+                        keyPressed(msg[nameIndex]);
+                    }
+                    $(".title").append(msg[nameIndex]);
+                    xMove = xMove + 0.53;
+                    moveUnderScore($(".under-score")[0]);
+                    nameIndex++;
+                    if (msg[nameIndex] !== "<br>" || msg[nameIndex] !== undefined){
+                        keyNotPressed(msg[nameIndex]);
+                    }
+                    setTimeout(typeWriter, msgSpeed);
+                } else {
+                    idle = true;
+                    moveUnderScore($(".under-score")[0]);
+                    showAboutMe($(".about-me")[0]);
+                }
+            }
+
+            function keyNotPressed(key) {
+                switch(key) {
+                    case(","):
+                        $(".comma")[0].style.backgroundColor = "#1c1a28";
+                        break;
+                    case("."):
+                        $(".dot")[0].style.backgroundColor = "#1c1a28";
+                        break;
+                    case("'"):
+                        $(".apos")[0].style.backgroundColor = "#1c1a28";
+                        break;
+                    case(" "):
+                        $(".Space")[0].style.backgroundColor = "#1c1a28";
+                        break;
+                    case("<br>"):
+                        break;
+                    case(undefined):
+                        break;
+                    default:
+                        $(`.${key.toUpperCase()}`)[0].style.backgroundColor = "#1c1a28";
+                        break;
+                }
+            }
+
+            function keyPressed(key) {
+                switch(key) {
+                    case(","):
+                        $(".comma")[0].style.backgroundColor = "#222034";
+                        break;
+                    case("."):
+                        $(".dot")[0].style.backgroundColor = "#222034";
+                        break;
+                    case("'"):
+                        $(".apos")[0].style.backgroundColor = "#222034";
+                        break;
+                    case(" "):
+                        $(".Space")[0].style.backgroundColor = "#222034";
+                        break;
+                    case("<br>"):
+                        break;
+                    case(undefined):
+                        break;
+                    default:
+                        $(`.${key.toUpperCase()}`)[0].style.backgroundColor = "#222034";
+                        break;
+                }
+            }
+
+            addUnderScore();
+            typeWriter();
+        </script>
+    </body>
+</html>

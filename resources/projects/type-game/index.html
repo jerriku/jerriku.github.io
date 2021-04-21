@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="dark-theme">
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="description" content="type game">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+
+        <script src="jquery-3.5.1.js"></script>
+    </head>
+    <body>
+        <h1>type-game</h1>
+        <div class="hearts">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="heart2">
+                <path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="heart1">
+                <path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="heart3">
+                <path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"/>
+            </svg>
+        </div>
+        <h2 id="player-wpm"></h2>
+        <h2 id="timer"></h2>
+        <div class="word-container"></div>
+        <input id="player-input" type="text" placeholder="Press space to enter"/>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+:root {
+    font-size: 16px;
+    font-family:'Courier New', cursive;
+}
+
+.light-theme {
+    --background: #fff;
+    --font: #2f3136;
+}
+
+.dark-theme {
+    --background: #2f3136;
+    --font: #fff;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+    background: var(--background);
+    color: var(--font);
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    color: var(--font);
+    font-size: 2rem;
+}
+
+#player-input {
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    border-bottom: 1px solid var(--font);
+    position: absolute;
+    bottom: 5vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    text-align: center;
+    background: var(--background);
+    color: var(--font);
+}
+
+#player-wpm {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 96vh;
+    left:50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+.hearts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 120px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hearts svg {
+    display: flex;
+    justify-content: space-evenly;
+    fill: var(--font);
+}
