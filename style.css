@@ -7,16 +7,19 @@
 .light-theme {
     --color: #000;
     --side-color: #999;
-    --background: #fff;
+    --background: #fbfbfd;;
 }
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: var(--color);
     background-color: var(--background);
+    text-align: justify;
+    overflow: hidden;
 }
 
 header {
+    position: fixed;
     padding-left: 20px;
     float: left;
     height: 100vh;
@@ -76,9 +79,8 @@ header a {
     width: auto;
 }
 
-.nav-projects:hover .projects-menu { 
-    display: flex;
-    flex-direction: column;
+.nav-projects:hover .projects-menu {
+    display: block;
 }
 
 .projects-link {
@@ -102,6 +104,7 @@ main {
     float: left;
     position: relative;
     top: 100px;
+    left: 300px;
     margin: 25px;
     padding: 25px;
     width: 70vw;
@@ -119,7 +122,7 @@ main {
 }
 
 .content {
-    display: none;
+    height: 100vh;
 }
 
 #main-page {
@@ -135,4 +138,28 @@ main {
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+.contact-form {
+    width: 600px;
+}
+
+.form-label {
+    margin-top: 10px;
+    display: inline-block;
+    width: 70px;
+}
+
+.form-input {
+    width: 100%;
+}
+
+#text-form {
+    margin: 20px 0;
+    height: 300px;
+    width: 100%;
+}
+
+#submit-form {
+    width: 70px;
 }
