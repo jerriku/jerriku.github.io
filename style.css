@@ -72,9 +72,15 @@ header a {
 }
 
 .nav-projects {
+    cursor: pointer;
     width: 90px;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
 }
-
+/**
 .nav-projects:hover {
     width: auto;
 }
@@ -82,7 +88,7 @@ header a {
 .nav-projects:hover .projects-menu {
     display: block;
 }
-
+**/
 .projects-link {
     width: 100%;
     cursor: pointer;
@@ -142,6 +148,8 @@ main {
 
 .contact-form {
     width: 600px;
+    padding: 50px 20px;
+    border: solid yellow;
 }
 
 .form-label {

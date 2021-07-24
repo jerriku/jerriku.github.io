@@ -15,3 +15,19 @@ function underscoreAnimation() {
 }
 
 underscoreAnimation();
+
+const menuElement = document.getElementById("items-menu");
+const navElement = document.getElementById("menu-nav");
+let menuOpen = false;
+navElement.addEventListener("click", () => {
+    if (menuOpen) {
+        menuElement.style.display = "none";
+        navElement.style.width = "90px";
+        menuOpen = false;
+    } else {
+        menuElement.style.display = "block";
+        navElement.style.width = "auto";
+        menuOpen = true;
+    }
+    console.log(menuOpen);
+});
