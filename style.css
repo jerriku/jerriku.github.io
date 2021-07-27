@@ -43,6 +43,11 @@ header a {
 .nav-bar {
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 .nav-bar li {
@@ -74,11 +79,6 @@ header a {
 .nav-projects {
     cursor: pointer;
     width: 90px;
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 /**
 .nav-projects:hover {
@@ -146,10 +146,14 @@ main {
     width: 100%;
 }
 
-.contact-form {
+.contact-screen {
+    position: absolute;
     width: 600px;
-    padding: 50px 20px;
-    border: solid yellow;
+}
+
+.contact-form {
+    border: solid grey;
+    padding: 20px 20px;
 }
 
 .form-label {
@@ -170,4 +174,9 @@ main {
 
 #submit-form {
     width: 70px;
+}
+
+#drag-box {
+    background: grey;
+    height: 25px;
 }
